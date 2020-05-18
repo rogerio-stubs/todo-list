@@ -1,0 +1,43 @@
+.data-input,
+.data-output {
+    text-align: center;
+}
+
+.data-input {
+    position: relative;
+    top: 50px;
+    left: 50hv;
+}
+
+input {
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 12px;
+    width: 500px;
+    text-align: center;    
+    background-color: whitesmoke;
+}
+
+.data-output {
+    position: relative;
+    top: 50px;
+    left: 50hv;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*
+input
+deve ser colocado mais abaixo;
+mudar o tamanho da box
+estilizar o botão
+não pode incluir tarefas em branco
+*/ 

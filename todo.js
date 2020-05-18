@@ -17,7 +17,7 @@ function renderTodos() {
         var pos = todos.indexOf(todo);
         linkElement.setAttribute('onclick', 'deleteTodo(' + pos + ')');
 
-        var linkText = document.createTextNode('Excluir');
+        var linkText = document.createTextNode(' Excluir');
 
         linkElement.appendChild(linkText);
 
@@ -49,3 +49,12 @@ function deleteTodo(pos) {
 function saveToStorage() {
     localStorage.setItem('list_todos', JSON.stringify(todos));
 }
+
+
+/* 
+REFATORAÇÃO
+- template string
+- trocar o excluir por um checkbox
+- colocar em outro lugar as infomações ja feitas
+- abaixo deixar a opção excluir
+*/ 
