@@ -1,29 +1,40 @@
-.data-input,
-.data-output {
-    text-align: center;
+#app {    
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px;
+    align-items: center;
+    /*background-color: blue;*/
 }
 
-.data-input {
-    position: relative;
-    top: 50px;
-    left: 50hv;
-}
-
-input {
+.data-input input {
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
-    font-size: 16px;
-    padding: 12px;
+    font-size: 15px;
+    padding: 16px;
     width: 500px;
-    text-align: center;    
     background-color: whitesmoke;
 }
 
-.data-output {
-    position: relative;
-    top: 50px;
-    left: 50hv;
+.data-input button {
+    background-color: #E6E6FA;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    padding: 16px 30px;
+}
+
+.data-input button:hover {
+    background-color:#4169E1;
+    color: whitesmoke;
+}
+
+ul {
+    background-color: #1E90FF;
+    width: 50%;
+    border-radius: 6px;
 }
 
 li {
@@ -32,12 +43,5 @@ li {
 
 a {
     text-decoration: none;
+    color: black
 }
-
-/*
-input
-deve ser colocado mais abaixo;
-mudar o tamanho da box
-estilizar o botão
-não pode incluir tarefas em branco
-*/ 
