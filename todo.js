@@ -1,6 +1,6 @@
-var listElement = document.querySelector('#app ul');
-var inputEelement = document.querySelector('#app input');
-var buttonElement = document.querySelector('#app button');
+var listElement = document.querySelector('.app ul');
+var inputEelement = document.querySelector('.app input');
+var buttonElement = document.querySelector('.app button');
 
 var todos = JSON.parse(localStorage.getItem('list_todos')) || [];
 

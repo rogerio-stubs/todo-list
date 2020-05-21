@@ -1,9 +1,15 @@
-#app {    
+/* soft-reset do css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app {    
     display: flex;
     flex-direction: column;
     padding-top: 70px;
     align-items: center;
-    /*background-color: blue;*/
 }
 
 .data-input input {
@@ -31,10 +37,11 @@
     color: whitesmoke;
 }
 
-ul {
-    background-color: #1E90FF;
+.data-output {
+    background-color: #87CEFA;
     width: 50%;
     border-radius: 6px;
+    margin-top: 10px;
 }
 
 li {
