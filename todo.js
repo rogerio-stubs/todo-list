@@ -1,60 +1,48 @@
-var listElement = document.querySelector('.app ul');
-var inputEelement = document.querySelector('.app input');
-var buttonElement = document.querySelector('.app button');
+const listElement = document.querySelector('.app ul')
+const inputEelement = document.querySelector('.app input')
+const buttonElement = document.querySelector('.app button')
 
-var todos = JSON.parse(localStorage.getItem('list_todos')) || [];
+var todos = []
+var todosCheck = [] 
 
-function renderTodos() {
-    listElement.innerHTML = '';
+buttonElement.onclick = createTodo
+// buttonElement.onclick = checkTodo // Não implementado
+// buttonElement.onclick = deleteTodos // Não implementado
+
+// acionados por btn
+function createTodo() {
+
+    const todoText = inputEelement.value
     
-    for (todo of todos) {
-        var todoElement = document.createElement('li');
-        var todoText = document.createTextNode(todo);
-
-        var linkElement = document.createElement('a');
-        linkElement.setAttribute('href', '#');
-
-        var pos = todos.indexOf(todo);
-        linkElement.setAttribute('onclick', 'deleteTodo(' + pos + ')');
-
-        var linkText = document.createTextNode(' Excluir');
-
-        linkElement.appendChild(linkText);
-
-        todoElement.appendChild(todoText);
-        todoElement.appendChild(linkElement);
-        listElement.appendChild(todoElement);
-    }
+    if(validation(todoText)){
+    addTodo(todoText)   
+   }
 }
 
-renderTodos()
-
-function addTodo() {
-    var todoText = inputEelement.value;
-
-    todos.push(todoText);
-    inputEelement.value = ' ';
-    renderTodos();
-    saveToStorage();
+function checkTodo(index, input) {
+    
+    todos.splice(index, 1) 
+    todosCheck.push(input) 
+    templateTodo(input) 
 }
 
-buttonElement.onclick = addTodo;
-
-function deleteTodo(pos) {
-    todos.splice(pos, 1);
-    renderTodos();
-    saveToStorage();
+function deleteTodos() {
+    
 }
 
-function saveToStorage() {
-    localStorage.setItem('list_todos', JSON.stringify(todos));
+function validation(input) {
+
+    if (!input == "" && !(input.match(/^\s+$/)))
+        return true
+    alert('Informe um item!')
 }
 
+function addTodo(input) {
 
-/* 
-REFATORAÇÃO
-- template string
-- trocar o excluir por um checkbox
-- colocar em outro lugar as infomações ja feitas
-- abaixo deixar a opção excluir
-*/ 
+    todos.push(input)    
+    return templateTodo(input)
+}
+
+function templateTodo() {
+    
+}
