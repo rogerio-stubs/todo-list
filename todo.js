@@ -2,20 +2,22 @@ const listElement = document.querySelector('.app ul')
 const inputEelement = document.querySelector('.app input')
 const buttonElement = document.querySelector('.app button')
 
+
 var todos = []
 var todosCheck = [] 
+
 
 buttonElement.onclick = createTodo
 // buttonElement.onclick = checkTodo // Não implementado
 // buttonElement.onclick = deleteTodos // Não implementado
 
-// acionados por btn
+
 function createTodo() {
 
     const todoText = inputEelement.value
     
     if(validation(todoText)){
-    addTodo(todoText)   
+    addTodo(todoText)
    }
 }
 
@@ -40,9 +42,13 @@ function validation(input) {
 function addTodo(input) {
 
     todos.push(input)    
-    return templateTodo(input)
+    templateTodo(input)
 }
 
-function templateTodo() {
+function templateTodo(input) {
     
+    const li = document.createElement('li')
+    li.innerHTML = input
+    listElement.insertAdjacentElement('beforeend', li)
+    inputEelement.value = ''
 }
