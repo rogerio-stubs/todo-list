@@ -17,15 +17,17 @@ function createTodo() {
     const todoText = inputEelement.value
     
     if(validation(todoText)){
-    addTodo(todoText)
+        addTodo(todoText)        
    }
+   console.log('todos', todos)
+   console.log('check', todosCheck)
 }
 
 function checkTodo(index, input) {
     
-    todos.splice(index, 1) 
-    todosCheck.push(input) 
-    templateTodo(input) 
+    todos.splice(index, 1)
+    todosCheck.push(input)
+    templateTodo(input)
 }
 
 function deleteTodos() {
@@ -41,14 +43,17 @@ function validation(input) {
 
 function addTodo(input) {
 
-    todos.push(input)    
+    todos.push(input)
     templateTodo(input)
 }
 
 function templateTodo(input) {
     
     const li = document.createElement('li')
+    
+    li.setAttribute('id', todos.indexOf(input))
     li.innerHTML = input
+    
     listElement.insertAdjacentElement('beforeend', li)
     inputEelement.value = ''
 }
