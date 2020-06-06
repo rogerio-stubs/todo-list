@@ -49,9 +49,9 @@ function addTodo(input) {
 
 function templateTodo(input) {
     
-    const li = document.createElement('li')
+    // const li = document.createElement('li')
     
-    li.setAttribute('id', todos.indexOf(input))
+    // li.setAttribute('id', todos.indexOf(input))
     li.innerHTML = input
     
     listElement.insertAdjacentElement('beforeend', li)
