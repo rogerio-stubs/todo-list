@@ -5,6 +5,23 @@
     box-sizing: border-box;
 }
 
+button {
+    background-color: #E6E6FA;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    padding: 16px 30px;
+    outline-style: none;
+}
+
+
+li {
+    list-style: none;
+}
+
+
 .app {    
     display: flex;
     flex-direction: column;
@@ -22,15 +39,6 @@
     background-color: whitesmoke;
 }
 
-.data-input button {
-    background-color: #E6E6FA;
-    color: black;
-    border: none;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 16px;
-    padding: 16px 30px;
-}
 
 .data-input button:hover {
     background-color:#4169E1;
@@ -38,17 +46,39 @@
 }
 
 .data-output {
-    background-color: #87CEFA;
     width: 50%;
-    border-radius: 6px;
+    
     margin-top: 10px;
+    font-size: 21px;
 }
 
-li {
-    list-style: none;
+.data-output button {
+    background-color: #66e98d;
 }
 
-a {
-    text-decoration: none;
-    color: black
+.data-output button:hover {
+    background-color: #32db2c;
+}
+
+.to-do {
+    border-radius: 6px;
+    background-color: whitesmoke;
+}
+
+.done {
+    border-radius: 6px;
+    background-color: whitesmoke;
+    margin-top: 10px;
+    text-decoration: line-through;
+}
+
+.clean button {
+    background-color: #fa7979;
+    margin-top: 10px;
+    margin-left: 500px;
+}
+
+.clean button:hover {
+    background-color: #e61111;
+    color: white;
 }
