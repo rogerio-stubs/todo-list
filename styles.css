@@ -27,6 +27,7 @@ li {
     flex-direction: column;
     padding-top: 70px;
     align-items: center;
+    font-family: Roboto;
 }
 
 .data-input input {
@@ -69,7 +70,8 @@ li {
     border-radius: 6px;
     background-color: whitesmoke;
     margin-top: 10px;
-    text-decoration: line-through;
+    filter: blur(0.7px);
+    color: #828a82;
 }
 
 .clean button {
@@ -82,3 +84,4 @@ li {
     background-color: #e61111;
     color: white;
 }
+
