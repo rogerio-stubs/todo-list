@@ -1,59 +1,29 @@
-const listElement = document.querySelector('.app ul')
-const inputEelement = document.querySelector('.app input')
-const buttonElement = document.querySelector('.app button')
+const elementBtnSave = document.querySelector('.data-input button');
+const elementInputText = document.querySelector('.data-input input');
+const elementBtnDelete = document.querySelector('.clean button');
+
+var toDo = [];
+
+elementBtnSave.addEventListener('click', () => {
+    const inputText = elementInputText.value;
+    if(validation(inputText))
+        addToDo(inputText)
+});
 
 
-var todos = []
-var todosCheck = [] 
+elementBtnDelete.addEventListener('click', () => {
+    const node = document.querySelector('.done');
+    if (node.parentNode)
+        node.parentNode.removeChild(node);
+});
 
-
-buttonElement.onclick = createTodo
-// buttonElement.onclick = checkTodo // Não implementado
-// buttonElement.onclick = deleteTodos // Não implementado
-
-
-function createTodo() {
-
-    const todoText = inputEelement.value
-    
-    if(validation(todoText)){
-        addTodo(todoText)        
-   }
-   console.log('todos', todos)
-   console.log('check', todosCheck)
-}
-
-function checkTodo(index, input) {
-    
-    todos.splice(index, 1)
-    todosCheck.push(input)
-    templateTodo(input)
-}
-
-function deleteTodos() {
-    
-}
 
 function validation(input) {
-
     if (!input == "" && !(input.match(/^\s+$/)))
-        return true
-    alert('Informe um item!')
+        return true;
+    alert('Informe um item!');
 }
 
-function addTodo(input) {
-
-    todos.push(input)
-    templateTodo(input)
-}
-
-function templateTodo(input) {
-    
-    // const li = document.createElement('li')
-    
-    // li.setAttribute('id', todos.indexOf(input))
-    li.innerHTML = input
-    
-    listElement.insertAdjacentElement('beforeend', li)
-    inputEelement.value = ''
+function addToDo(input) {
+    toDo.push(input);
 }
