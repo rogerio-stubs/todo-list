@@ -6,10 +6,10 @@ var toDo = [];
 
 elementBtnSave.addEventListener('click', () => {
     const inputText = elementInputText.value;
+    elementInputText.value = '';
     if(validation(inputText))
         addToDo(inputText)
 });
-
 
 elementBtnDelete.addEventListener('click', () => {
     const node = document.querySelector('.done');
@@ -17,13 +17,22 @@ elementBtnDelete.addEventListener('click', () => {
         node.parentNode.removeChild(node);
 });
 
-
-function validation(input) {
-    if (!input == "" && !(input.match(/^\s+$/)))
+function validation(inputText) {
+    if (!inputText == "" && !(inputText.match(/^\s+$/)))
         return true;
     alert('Informe um item!');
 }
 
-function addToDo(input) {
-    toDo.push(input);
+function addToDo(inputText) {
+    toDo.push(inputText);
+    let li = document.createElement('li');
+    let input = document.createElement('input');
+    let p = document.createElement('p');
+
+    let ul = document.querySelector('.to-do ul');
+    li.appendChild(input);
+    input.setAttribute('type', 'checkbox')
+    li.appendChild(p);
+    p.textContent = inputText;
+    ul.appendChild(li);
 }
