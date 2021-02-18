@@ -22,7 +22,8 @@ li {
     display: flex;
     justify-content: initial;
     align-items: center;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 
 p {
@@ -60,7 +61,6 @@ body {
 
 .data-output {
     width: 50%;
-    
     margin-top: 10px;
     font-size: 21px;
 }
@@ -79,11 +79,11 @@ body {
 }
 
 .done {
-    border-radius: 6px;
-    background-color: whitesmoke;
-    margin-top: 10px;
-    filter: blur(0.798px);
-    color: #828a82;
+    /* border-radius: 6px; */
+    /* background-color: whitesmoke; */
+    /* margin-top: 10px; */
+    /* filter: blur(0.798px); */
+    /* color: #828a82; */
 }
 
 .clean button {
@@ -103,7 +103,7 @@ input[type=checkbox] {
     top: -7px;
   }
   
-  input[type=checkbox]:before {
+input[type=checkbox]:before {
     content: "";
     display: block;
     position: absolute;
@@ -112,9 +112,9 @@ input[type=checkbox] {
     top: 0;
     left: 0;
     background-color: #7ad877;
-  }
+}
   
-  input[type=checkbox]:checked:after {
+input[type=checkbox]:checked:after {
     content: "";
     display: block;
     width: 10px;
@@ -127,4 +127,4 @@ input[type=checkbox] {
     position: absolute;
     top: 7px;
     left: 10px;
-  }
+}

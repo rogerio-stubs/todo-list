@@ -2,6 +2,8 @@ const elementBtnSave = document.querySelector('.data-input button');
 const elementInputText = document.querySelector('.data-input input');
 const elementBtnDelete = document.querySelector('.clean button');
 
+var list;
+
 
 elementBtnSave.addEventListener('click', () => {
     const inputText = elementInputText.value;
@@ -11,6 +13,7 @@ elementBtnSave.addEventListener('click', () => {
 });
 
 elementBtnDelete.addEventListener('click', () => {
+    // Verificar o que tem check e retirar
     const node = document.querySelector('.table');
     if (node.parentNode)
         node.parentNode.removeChild(node);
@@ -30,16 +33,7 @@ function toDo(inputText) {
     let ul = document.querySelector('.to-do ul');
     li.appendChild(input);
     input.setAttribute('type', 'checkbox');
-    input.setAttribute('onclick', 'done()');
     li.appendChild(p);
     p.textContent = inputText;
-    ul.appendChild(li);
-}
-
-function done() {
-    let li = document.createElement('li');
-    li.textContent = 'texto';
-
-    let ul = document.querySelector('.table');
     ul.appendChild(li);
 }
