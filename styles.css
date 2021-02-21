@@ -16,7 +16,6 @@ button {
     outline-style: none;
 }
 
-
 li {
     list-style: none;
     display: flex;
@@ -30,10 +29,9 @@ p {
     padding-left: 25px;
 }
 
-body {
-    /* dark mode */
-    /* background-color: #333958; */
-}
+/* body {
+    background-color: #333958;
+} */
 
 .app {    
     display: flex;
@@ -52,7 +50,6 @@ body {
     width: 500px;
     background-color: whitesmoke;
 }
-
 
 .data-input button:hover {
     background-color:#4169E1;
@@ -76,14 +73,6 @@ body {
 .to-do {
     border-radius: 6px;
     background-color: whitesmoke;
-}
-
-.done {
-    /* border-radius: 6px; */
-    /* background-color: whitesmoke; */
-    /* margin-top: 10px; */
-    /* filter: blur(0.798px); */
-    /* color: #828a82; */
 }
 
 .clean button {

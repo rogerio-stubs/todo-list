@@ -2,9 +2,6 @@ const elementBtnSave = document.querySelector('.data-input button');
 const elementInputText = document.querySelector('.data-input input');
 const elementBtnDelete = document.querySelector('.clean button');
 
-var list;
-
-
 elementBtnSave.addEventListener('click', () => {
     const inputText = elementInputText.value;
     elementInputText.value = '';
@@ -14,9 +11,10 @@ elementBtnSave.addEventListener('click', () => {
 
 elementBtnDelete.addEventListener('click', () => {
     // Verificar o que tem check e retirar
-    const node = document.querySelector('.table');
+    const node = document.querySelector('.to-do');
     if (node.parentNode)
-        node.parentNode.removeChild(node);
+        alert(node.parentNode)
+        // node.parentNode.removeChild(node);
 });
 
 function validation(inputText) {
@@ -33,7 +31,17 @@ function toDo(inputText) {
     let ul = document.querySelector('.to-do ul');
     li.appendChild(input);
     input.setAttribute('type', 'checkbox');
+    input.setAttribute('id', 'elemento')
     li.appendChild(p);
     p.textContent = inputText;
     ul.appendChild(li);
 }
+
+ $(document).ready(() => {
+     $(document).on('click', '#elemento', function() {
+         if($(this).is(':checked')){
+             alert('sim')
+            //  $(this).css({'filter': 'blur(4px)'})
+         }
+     })
+ })
