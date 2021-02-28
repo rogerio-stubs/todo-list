@@ -91,7 +91,7 @@ input[type=checkbox] {
     cursor: pointer;
     top: -7px;
   }
-  
+
 input[type=checkbox]:before {
     content: "";
     display: block;

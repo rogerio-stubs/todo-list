@@ -3,18 +3,11 @@ const elementInputText = document.querySelector('.data-input input');
 const elementBtnDelete = document.querySelector('.clean button');
 
 elementBtnSave.addEventListener('click', () => {
+    // adicionar elemento com o enter
     const inputText = elementInputText.value;
     elementInputText.value = '';
-    if(validation(inputText))
+    if (validation(inputText))
         toDo(inputText)
-});
-
-elementBtnDelete.addEventListener('click', () => {
-    // Verificar o que tem check e retirar
-    const node = document.querySelector('.to-do');
-    if (node.parentNode)
-        alert(node.parentNode)
-        // node.parentNode.removeChild(node);
 });
 
 function validation(inputText) {
@@ -24,6 +17,7 @@ function validation(inputText) {
 }
 
 function toDo(inputText) {
+    // implementar a quebra de liha
     let li = document.createElement('li');
     let input = document.createElement('input');
     let p = document.createElement('p');
@@ -37,11 +31,14 @@ function toDo(inputText) {
     ul.appendChild(li);
 }
 
- $(document).ready(() => {
-     $(document).on('click', '#elemento', function() {
-         if($(this).is(':checked')){
-             alert('sim')
-            //  $(this).css({'filter': 'blur(4px)'})
-         }
-     })
- })
+$(document).ready(() => {
+    $(document).on('click', '#elemento', function () {
+        if ($(this).is(':checked')) {
+            $(this.parentNode).css({ 'filter': 'blur(4px)' })
+        }
+        else {
+            // caso precionado novamente exclui o item
+            this.parentNode.removeChild(this);
+        }
+    })
+})
