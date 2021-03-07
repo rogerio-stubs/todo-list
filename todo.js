@@ -37,8 +37,7 @@ $(document).ready(() => {
             $(this.parentNode).css({ 'filter': 'blur(4px)' })
         }
         else {
-            // caso precionado novamente exclui o item
-            this.parentNode.removeChild(this);
+            $(this).closest("li").remove();
         }
     })
 })
