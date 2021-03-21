@@ -1,6 +1,12 @@
 const elementBtnSave = document.querySelector('.data-input button');
 const elementInputText = document.querySelector('.data-input input');
 const elementBtnDelete = document.querySelector('.clean button');
+let myStorage = localStorage;
+
+const keys = Object.keys(myStorage);
+for(let index = 0; index < keys.length; index++) {
+    toDo(keys[index])
+}
 
 elementBtnSave.addEventListener('click', () => {
     validation(returnValue())
@@ -40,6 +46,7 @@ function toDo(inputText) {
     li.appendChild(p);
     p.textContent = inputText;
     ul.appendChild(li);
+    myStorage.setItem(inputText, inputText);
 }
 
 $(document).ready(() => {
@@ -49,6 +56,8 @@ $(document).ready(() => {
         }
         else {
             $(this).closest("li").remove();
+            console.log($(this.parentNode.text(content)))
+            // myStorage.removeItem() 
         }
     })
 })
