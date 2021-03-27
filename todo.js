@@ -42,7 +42,7 @@ function toDo(inputText) {
     let ul = document.querySelector('.to-do ul');
     li.appendChild(input);
     input.setAttribute('type', 'checkbox');
-    input.setAttribute('id', 'elemento')
+    input.setAttribute('id', 'elemento');
     li.appendChild(p);
     p.textContent = inputText;
     ul.appendChild(li);
@@ -52,12 +52,11 @@ function toDo(inputText) {
 $(document).ready(() => {
     $(document).on('click', '#elemento', function () {
         if ($(this).is(':checked')) {
-            $(this.parentNode).css({ 'filter': 'blur(4px)' })
+            $(this.parentNode).css({ 'filter': 'blur(4px)' });
         }
         else {
+            myStorage.removeItem($(this).closest("li").children().eq(1).text());
             $(this).closest("li").remove();
-            console.log($(this.parentNode.text(content)))
-            // myStorage.removeItem() 
         }
     })
 })
